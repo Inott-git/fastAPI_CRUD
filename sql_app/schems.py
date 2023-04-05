@@ -1,6 +1,8 @@
 from typing import List
 
-from pydantic import BaseModel
+from fastapi import HTTPException
+from pydantic import BaseModel, validator, validate_arguments, root_validator
+
 
 class BookBase(BaseModel):
     title: str
@@ -18,10 +20,15 @@ class Book(BookBase):
 class UserBase(BaseModel):
     login: str
 
-
 class User(UserBase):
     user_id: int
     books: list[Book] = []
+
+    @root_validator
+    def val(cls, value: dict):
+        if value["user_id"] == -1:
+            return {'status_code': 100, 'detail': 'User not found'}
+        return value
 
 
     class Config:

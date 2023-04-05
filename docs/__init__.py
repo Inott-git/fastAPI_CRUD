@@ -1,0 +1,1 @@
+from .metadata_tags import tags_metadata
