@@ -1,9 +1,10 @@
 tags_metadata = [
     {
         'name': 'user',
-        'description': '### ОПЕРАЦИИ С ПОЛЬЗОВАТЕЛЯМИ'
+        'description': ' _ОПЕРАЦИИ С ПОЛЬЗОВАТЕЛЯМИ_'
     },
     {
-        'name': 'book'
+        'name': 'book',
+        'description': '_ОПЕРАЦИИ С КНИГАМИ_'
     }
 ]
